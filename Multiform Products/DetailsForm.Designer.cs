@@ -1,6 +1,6 @@
 ﻿namespace Multiform_Products
 {
-    partial class Form1
+    partial class DetailsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetailsForm));
+            System.Windows.Forms.Label product_NumberLabel;
+            System.Windows.Forms.Label descriptionLabel;
+            System.Windows.Forms.Label units_On_HandLabel;
+            System.Windows.Forms.Label priceLabel;
             this.productDBDataSet = new Multiform_Products.ProductDBDataSet();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productTableAdapter = new Multiform_Products.ProductDBDataSetTableAdapters.ProductTableAdapter();
@@ -47,18 +51,19 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.productBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.productDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDetails = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.product_NumberTextBox = new System.Windows.Forms.TextBox();
+            this.descriptionTextBox = new System.Windows.Forms.TextBox();
+            this.units_On_HandTextBox = new System.Windows.Forms.TextBox();
+            this.priceTextBox = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            product_NumberLabel = new System.Windows.Forms.Label();
+            descriptionLabel = new System.Windows.Forms.Label();
+            units_On_HandLabel = new System.Windows.Forms.Label();
+            priceLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
             this.productBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // productDBDataSet
@@ -107,7 +112,7 @@
             this.productBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.productBindingNavigator.Name = "productBindingNavigator";
             this.productBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productBindingNavigator.Size = new System.Drawing.Size(456, 25);
+            this.productBindingNavigator.Size = new System.Drawing.Size(289, 25);
             this.productBindingNavigator.TabIndex = 0;
             this.productBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -205,85 +210,107 @@
             this.productBindingNavigatorSaveItem.Text = "Save Data";
             this.productBindingNavigatorSaveItem.Click += new System.EventHandler(this.productBindingNavigatorSaveItem_Click);
             // 
-            // productDataGridView
+            // product_NumberLabel
             // 
-            this.productDataGridView.AllowUserToAddRows = false;
-            this.productDataGridView.AllowUserToDeleteRows = false;
-            this.productDataGridView.AutoGenerateColumns = false;
-            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
-            this.productDataGridView.DataSource = this.productBindingSource;
-            this.productDataGridView.Location = new System.Drawing.Point(0, 28);
-            this.productDataGridView.Name = "productDataGridView";
-            this.productDataGridView.Size = new System.Drawing.Size(445, 220);
-            this.productDataGridView.TabIndex = 1;
+            product_NumberLabel.AutoSize = true;
+            product_NumberLabel.Location = new System.Drawing.Point(12, 34);
+            product_NumberLabel.Name = "product_NumberLabel";
+            product_NumberLabel.Size = new System.Drawing.Size(87, 13);
+            product_NumberLabel.TabIndex = 1;
+            product_NumberLabel.Text = "Product Number:";
             // 
-            // dataGridViewTextBoxColumn1
+            // product_NumberTextBox
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Product_Number";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Product_Number";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.product_NumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Product_Number", true));
+            this.product_NumberTextBox.Location = new System.Drawing.Point(105, 31);
+            this.product_NumberTextBox.Name = "product_NumberTextBox";
+            this.product_NumberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.product_NumberTextBox.TabIndex = 2;
             // 
-            // dataGridViewTextBoxColumn2
+            // descriptionLabel
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Description";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            descriptionLabel.AutoSize = true;
+            descriptionLabel.Location = new System.Drawing.Point(12, 60);
+            descriptionLabel.Name = "descriptionLabel";
+            descriptionLabel.Size = new System.Drawing.Size(63, 13);
+            descriptionLabel.TabIndex = 3;
+            descriptionLabel.Text = "Description:";
             // 
-            // dataGridViewTextBoxColumn3
+            // descriptionTextBox
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Units_On_Hand";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Units_On_Hand";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Description", true));
+            this.descriptionTextBox.Location = new System.Drawing.Point(105, 57);
+            this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.Size = new System.Drawing.Size(100, 20);
+            this.descriptionTextBox.TabIndex = 4;
             // 
-            // dataGridViewTextBoxColumn4
+            // units_On_HandLabel
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            units_On_HandLabel.AutoSize = true;
+            units_On_HandLabel.Location = new System.Drawing.Point(12, 86);
+            units_On_HandLabel.Name = "units_On_HandLabel";
+            units_On_HandLabel.Size = new System.Drawing.Size(80, 13);
+            units_On_HandLabel.TabIndex = 5;
+            units_On_HandLabel.Text = "Units On Hand:";
             // 
-            // btnDetails
+            // units_On_HandTextBox
             // 
-            this.btnDetails.Location = new System.Drawing.Point(88, 260);
-            this.btnDetails.Name = "btnDetails";
-            this.btnDetails.Size = new System.Drawing.Size(82, 23);
-            this.btnDetails.TabIndex = 2;
-            this.btnDetails.Text = "Show Details";
-            this.btnDetails.UseVisualStyleBackColor = true;
-            this.btnDetails.Click += new System.EventHandler(this.btnDetails_Click);
+            this.units_On_HandTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Units_On_Hand", true));
+            this.units_On_HandTextBox.Location = new System.Drawing.Point(105, 83);
+            this.units_On_HandTextBox.Name = "units_On_HandTextBox";
+            this.units_On_HandTextBox.Size = new System.Drawing.Size(100, 20);
+            this.units_On_HandTextBox.TabIndex = 6;
             // 
-            // btnExit
+            // priceLabel
             // 
-            this.btnExit.Location = new System.Drawing.Point(237, 260);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
-            this.btnExit.TabIndex = 3;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            priceLabel.AutoSize = true;
+            priceLabel.Location = new System.Drawing.Point(12, 112);
+            priceLabel.Name = "priceLabel";
+            priceLabel.Size = new System.Drawing.Size(34, 13);
+            priceLabel.TabIndex = 7;
+            priceLabel.Text = "Price:";
             // 
-            // Form1
+            // priceTextBox
+            // 
+            this.priceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Price", true));
+            this.priceTextBox.Location = new System.Drawing.Point(105, 109);
+            this.priceTextBox.Name = "priceTextBox";
+            this.priceTextBox.Size = new System.Drawing.Size(100, 20);
+            this.priceTextBox.TabIndex = 8;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(105, 135);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 9;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // DetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 295);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnDetails);
-            this.Controls.Add(this.productDataGridView);
+            this.ClientSize = new System.Drawing.Size(289, 170);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(product_NumberLabel);
+            this.Controls.Add(this.product_NumberTextBox);
+            this.Controls.Add(descriptionLabel);
+            this.Controls.Add(this.descriptionTextBox);
+            this.Controls.Add(units_On_HandLabel);
+            this.Controls.Add(this.units_On_HandTextBox);
+            this.Controls.Add(priceLabel);
+            this.Controls.Add(this.priceTextBox);
             this.Controls.Add(this.productBindingNavigator);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "DetailsForm";
+            this.Text = "DetailsForm";
+            this.Load += new System.EventHandler(this.DetailsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
             this.productBindingNavigator.ResumeLayout(false);
             this.productBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,13 +335,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton productBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView productDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.Button btnDetails;
-        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.TextBox product_NumberTextBox;
+        private System.Windows.Forms.TextBox descriptionTextBox;
+        private System.Windows.Forms.TextBox units_On_HandTextBox;
+        private System.Windows.Forms.TextBox priceTextBox;
+        private System.Windows.Forms.Button btnClose;
     }
 }
-
